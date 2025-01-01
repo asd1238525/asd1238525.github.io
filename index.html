@@ -2109,7 +2109,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1734440438592),
+    lastupdate: new Date(1735730303727),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2927,9 +2927,139 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
+  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2025/01/01/SSTI模板注入/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="Yunlin's Blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="Yunlin's Blog">
+    <meta itemprop="description" content="分享技术知识，探讨编程问题，一起成长。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2025/01/01/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"  itemprop="url">
+        SSTI模板注入
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        SSTI模板注入基本判断
+&#123;&#123;'7*7'&#125;&#125; 会返回 49。
+存在 render_template 或 render_template_string。
+
+思路SSTI漏洞主要有两个思路：XSS（跨站脚本攻击）和 RCE（远程代码执行）。
+XSS
+可以通过 alert 弹窗判断。有 SSTI 的地方一定有 XSS，反之则不一定。如果有 XSS 漏洞没有什...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2025-01-01T19:02:36+08:00">2025-01-01</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2025/01/01/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
+  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2025/01/01/127-0-0-1绕过/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="Yunlin's Blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="Yunlin's Blog">
+    <meta itemprop="description" content="分享技术知识，探讨编程问题，一起成长。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2025/01/01/127-0-0-1%E7%BB%95%E8%BF%87/"  itemprop="url">
+        127.0.0.1绕过
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+最常见的就是双重编码绕过,原理url会自动帮你解码一次,在request请求里再解码一次,因此可以用双重编码绕过,但是把waf写进服务器里就g了
+
+等价替换
+
+
+
+0.0.0.0
+2130706433
+www.localtest.me
+[::1]
+
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2025-01-01T18:52:54+08:00">2025-01-01</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2025/01/01/127-0-0-1%E7%BB%95%E8%BF%87/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3042,57 +3172,6 @@ WAF绕过
       
         <div>
           <a class='readmore' href='/2024/12/15/%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
-  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2024/12/15/ssti模板注入/">
-  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
-    <meta itemprop="name" content="Yunlin's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
-    <meta itemprop="name" content="Yunlin's Blog">
-    <meta itemprop="description" content="分享技术知识，探讨编程问题，一起成长。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/12/15/ssti%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"  itemprop="url">
-        Dec 15, 2024
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-12-15T18:27:54+08:00">2024-12-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/12/15/ssti%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3448,7 +3527,9 @@ $$(&lt;$&lt;)这行命令会尝试把 Flag 作...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1.函数length():计算字符串的长度substr(string, start, length):截取字符串ASCII():返回字符串最左边字符的数值,若为空字符串则返回0,若为null则返回null,与substr可以配合使用sleep():暂停指定的时间rename:例将word表名改为word1,则rename tables word to word1;  (字符串为表名操作时要加...
+        SQL 注入攻击技巧
+
+函数length()：计算字符串的长度。substr(string, start, length)：截取字符串。ASCII()：返回字符串最左边字符的数值。若为空字符串则返回0，若为null则返回null。可以与substr配合使用。sleep()：暂停指定的时间。rename：例如将word表名改为word1，则使用rename tables word to wor...
       
     
   </div>
@@ -3470,62 +3551,6 @@ $$(&lt;$&lt;)这行命令会尝试把 Flag 作...
       
         <div>
           <a class='readmore' href='/2024/12/03/SQL/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
-  <link itemprop="mainEntityOfPage" href="http://asd1238525.github.io/2024/12/03/Misc编码总结/">
-  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
-    <meta itemprop="name" content="Yunlin's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
-    <meta itemprop="name" content="Yunlin's Blog">
-    <meta itemprop="description" content="分享技术知识，探讨编程问题，一起成长。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/12/03/Misc%E7%BC%96%E7%A0%81%E6%80%BB%E7%BB%93/"  itemprop="url">
-        Misc编码总结
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.编码一般以&#x3D;&#x2F;&#x3D;&#x3D;结尾的一般是base64编码,如果是以&#x3D;开头的可以尝试将其反转再解码2.解码结果若是像flag{xxx}这样的格式,大概率是凯撒加密3.工具可以使用随波逐流,Cyberchef,在线解密网站等……………………..
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-12-03T21:49:08+08:00">2024-12-03</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/12/03/Misc%E7%BC%96%E7%A0%81%E6%80%BB%E7%BB%93/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3693,7 +3718,7 @@ $$(&lt;$&lt;)这行命令会尝试把 Flag 作...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>13 篇</div>
+          <div>14 篇</div>
         </div>
       
 
@@ -3712,7 +3737,7 @@ $$(&lt;$&lt;)这行命令会尝试把 Flag 作...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2024-12-17 日</div>
+          <div id="last-update-show">2025-01-01 日</div>
         </div>
       
     </div>
@@ -3737,7 +3762,7 @@ $$(&lt;$&lt;)这行命令会尝试把 Flag 作...
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2024/12/17/xss/"><div class="item"><time>2024-12-17</time></div><span>xss</span></a></li><li><a class="widget-last" href="/2024/12/15/%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/"><div class="item"><time>2024-12-17</time></div><span>路径穿越</span></a></li><li><a class="widget-last" href="/2024/12/06/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/"><div class="item"><time>2024-12-13</time><span>CTF</span></div><span>零碎知识</span></a></li><li><a class="widget-last" href="/2024/12/03/SQL/"><div class="item"><time>2024-12-13</time><span>CTF</span></div><span>SQL</span></a></li><li><a class="widget-last" href="/2024/12/07/RCE%E7%BB%95%E8%BF%87/"><div class="item"><time>2024-12-11</time></div><span>RCE绕过</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2025/01/01/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"><div class="item"><time>2025-01-01</time></div><span>SSTI模板注入</span></a></li><li><a class="widget-last" href="/2025/01/01/127-0-0-1%E7%BB%95%E8%BF%87/"><div class="item"><time>2025-01-01</time></div><span>127.0.0.1绕过</span></a></li><li><a class="widget-last" href="/2024/12/03/SQL/"><div class="item"><time>2025-01-01</time><span>CTF</span></div><span>SQL</span></a></li><li><a class="widget-last" href="/2024/12/17/xss/"><div class="item"><time>2024-12-17</time></div><span>xss</span></a></li><li><a class="widget-last" href="/2024/12/15/%E8%B7%AF%E5%BE%84%E7%A9%BF%E8%B6%8A/"><div class="item"><time>2024-12-17</time></div><span>路径穿越</span></a></li></ul>
   </div>
 </section>
 
