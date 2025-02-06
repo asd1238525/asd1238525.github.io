@@ -2111,7 +2111,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1738489869282),
+    lastupdate: new Date(1738822699634),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2996,10 +2996,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='next' href='/2025/01/01/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/'>
           <p class='title'>SSTI模板注入<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-title: SSTI模板注入date: 2024-12-15 18:27:54tags:
-title: SSTI模板注入date: 2025-01-01 19:02:36tags:
-titl...</p>
+          <p class='content'>基本判断
+&#123;&#123;'7*7'&#125;&#125; 会返回 49。
+存在 render_template 或 render_template_string。
+
+思路SSTI漏洞...</p>
         </a>
       
     </div>
