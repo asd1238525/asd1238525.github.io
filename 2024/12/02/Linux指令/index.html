@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Linux指令 - Yunlin's Blog</title>
+  <title>Linux基础 - Yunlin's Blog</title>
   <meta name="keywords" content="Linux,null">
   <meta desc name="description" content="分享技术知识，探讨编程问题，一起成长。 - John Doe - Yunlin's Blog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux指令">
+<meta property="og:title" content="Linux基础">
 <meta property="og:url" content="http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Yunlin&#39;s Blog">
 <meta property="og:description" content="windows有盘符，linux没有，都是以目录树的形式存储文件。用户分为:普通用户,管理员用户,超级用户。普通用户:只能使用自己的目录,不能使用管理员权限的命令。管理员用户:可以管理系统中的所有文件,可以执行所有命令。超级用户:拥有最高权限,可以执行任何命令。常用命令：sudo：以超级用户权限运行命令su：切换用户whoami：显示当前用户~：表示当前用户的主目录(家目录)pwd：显示当前工作目">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-12-02T10:06:31.000Z">
-<meta property="article:modified_time" content="2025-02-05T16:36:46.000Z">
+<meta property="article:modified_time" content="2025-02-07T15:00:18.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -2112,7 +2112,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1738822699634),
+    lastupdate: new Date(1740671423208),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2839,7 +2839,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Linux指令
+        Linux基础
       </h1>
       <div class='new-meta-box'>
         
@@ -2901,7 +2901,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>windows有盘符，linux没有，都是以目录树的形式存储文件。<br>用户分为:普通用户,管理员用户,超级用户。<br>普通用户:只能使用自己的目录,不能使用管理员权限的命令。<br>管理员用户:可以管理系统中的所有文件,可以执行所有命令。<br>超级用户:拥有最高权限,可以执行任何命令。<br>常用命令：<br>sudo：以超级用户权限运行命令<br>su：切换用户<br>whoami：显示当前用户<br>~：表示当前用户的主目录(家目录)<br>pwd：显示当前工作目录<br>cd：切换目录<br>cd ..：返回上级目录<br>cd &#x2F;：切换到根目录<br>ls：显示目录内容 可选项(-l 显示详细信息 -a 显示隐藏文件 -d 仅显示目录 -h 显示单位 -R 递归显示目录下所有文件 -r 逆序显示文件)<br>touch：创建文件<br>mkdir：创建目录 可选项(-p 递归创建目录)<br>cat：查看文件内容<br>more：分页显示文件内容 (空格翻页，q退出)<br>rm：删除文件或目录 语法:rm [-r -f] 参数 例:rm -rf 文件或目录(-r 删除文件夹, -f 强制删除)<br>cp：复制文件或目录 语法:cp [-r] 被复制文件或文件夹 复制到的地方 (-r 递归复制,复制文件夹用的)<br>mv：移动文件或目录 语法:mv 被移动的文件或文件夹 移动到的地方<br>which:查找命令路径<br>find：查找文件或目录  语法:find &#x2F; -name “文件名”  |  find &#x2F; -size +|-n(数字)kMG<br>grep:搜索文件内容(与|管道命令配合使用)  例:cat file.txt | grep “关键字” 语法:grep [-n] 被搜索的字符串 文件名(-n 显示行号)<br>wc:统计文件行数、单词数、字节数 语法:wc [-l -w -c -m] 文件名 (-l 显示行数, -w 显示单词数, -c 显示字节数, -m 显示字符数)<br>echo:打印信息 语法:echo [-n] 要打印的信息 (-n 不换行) 这里反引号可以和echo一起使用，表示将后面的内容作为一个整体打印出来.<br>重定向符:&gt; 覆盖原文件，&gt;&gt; 追加到原文件<br>tail:查看文件末尾内容 语法:tail [-f -num] 文件名 (-f 实时显示, -num 显示最后num行, 默认显示最后10行)<br>man：查看命令帮助<br>vim：编辑文件 (w写入，q退出，i进入编辑模式，esc退出编辑模式,dd删除一行，yy复制一行，p粘贴一行，&#x2F;搜索关键字，n下一个关键字，N上一个关键字,u撤销)<br>file:可以看文件简介<br>xxd:查看二进制文件内容<br>foremost:恢复被删除文件<br>useradd:添加用户 语法:useradd [-g -d] 用户名 (-g 指定用户组, -d 指定用户主目录)<br>userdel:删除用户 语法:userdel [-r] 用户名 (-r 删除用户主目录)<br>usermod:将用户加入指定组 语法:usermod [-aG] 用户组 用户名 (-a 添加用户到组, -G 将用户从组中移除)<br>getent:查看系统用户信息 语法:getent [user|group|passwd|shadow]<br>chmod:修改文件或目录权限 语法:chmod [-R] u&#x3D;rwx,g&#x3D;rwx,o&#x3D;rwx 被修改文件或目录 (-R 文件夹内所有文件都修改权限) 等价chmod 777 文件或目录 r&#x3D;4 w&#x3D;2 x&#x3D;1<br>chown:修改文件或目录所属用户和用户组 语法:chown [-R] [用户名]:[用户组名] 文件或目录 (-R 文件夹内所有文件都修改所有者)<br>exit和ctrl+d:退出当前用户<br>history:查看历史命令<br>!!:重复上一条命令<br>ctrl+r:搜索历史命令<br>ctrl+a:移动光标到行首<br>ctrl+e:移动光标到行尾<br>ctrl+鼠标左键:向左移动一个单词<br>ctrl+鼠标右键:向右移动一个单词<br>ctrl+l和clear:清屏</p>
+    <p>windows有盘符，linux没有，都是以目录树的形式存储文件。<br>用户分为:普通用户,管理员用户,超级用户。<br>普通用户:只能使用自己的目录,不能使用管理员权限的命令。<br>管理员用户:可以管理系统中的所有文件,可以执行所有命令。<br>超级用户:拥有最高权限,可以执行任何命令。<br>常用命令：<br>sudo：以超级用户权限运行命令<br>su：切换用户<br>whoami：显示当前用户<br>~：表示当前用户的主目录(家目录)<br>pwd：显示当前工作目录<br>cd：切换目录<br>cd ..：返回上级目录<br>cd &#x2F;：切换到根目录<br>ls：显示目录内容 可选项(-l 显示详细信息 -a 显示隐藏文件 -d 仅显示目录 -h 显示单位 -R 递归显示目录下所有文件 -r 逆序显示文件)<br>touch：创建文件<br>mkdir：创建目录 可选项(-p 递归创建目录)<br>cat：查看文件内容<br>more：分页显示文件内容 (空格翻页，q退出)<br>rm：删除文件或目录 语法:rm [-r -f] 参数 例:rm -rf 文件或目录(-r 删除文件夹, -f 强制删除)<br>cp：复制文件或目录 语法:cp [-r] 被复制文件或文件夹 复制到的地方 (-r 递归复制,复制文件夹用的)<br>mv：移动文件或目录 语法:mv 被移动的文件或文件夹 移动到的地方<br>which:查找命令路径<br>find：查找文件或目录  语法:find &#x2F; -name “文件名”  |  find &#x2F; -size +|-n(数字)kMG<br>grep:搜索文件内容(与|管道命令配合使用)  例:cat file.txt | grep “关键字” 语法:grep [-n] 被搜索的字符串 文件名(-n 显示行号)<br>wc:统计文件行数、单词数、字节数 语法:wc [-l -w -c -m] 文件名 (-l 显示行数, -w 显示单词数, -c 显示字节数, -m 显示字符数)<br>echo:打印信息 语法:echo [-n] 要打印的信息 (-n 不换行) 这里反引号可以和echo一起使用，表示将后面的内容作为一个整体打印出来.<br>重定向符:&gt; 覆盖原文件，&gt;&gt; 追加到原文件<br>tail:查看文件末尾内容 语法:tail [-f -num] 文件名 (-f 实时显示, -num 显示最后num行, 默认显示最后10行)<br>man：查看命令帮助<br>vim：编辑文件 (w写入，q退出，i进入编辑模式，esc退出编辑模式,dd删除一行，yy复制一行，p粘贴一行，&#x2F;搜索关键字，n下一个关键字，N上一个关键字,u撤销)<br>file:可以看文件简介<br>xxd:查看二进制文件内容<br>foremost:恢复被删除文件<br>useradd:添加用户 语法:useradd [-g -d] 用户名 (-g 指定用户组, -d 指定用户主目录)<br>userdel:删除用户 语法:userdel [-r] 用户名 (-r 删除用户主目录)<br>usermod:将用户加入指定组 语法:usermod [-aG] 用户组 用户名 (-a 添加用户到组, -G 将用户从组中移除)<br>getent:查看系统用户信息 语法:getent [user|group|passwd|shadow]<br>chmod:修改文件或目录权限 语法:chmod [-R] u&#x3D;rwx,g&#x3D;rwx,o&#x3D;rwx 被修改文件或目录 (-R 文件夹内所有文件都修改权限) 等价chmod 777 文件或目录 r&#x3D;4 w&#x3D;2 x&#x3D;1<br>chown:修改文件或目录所属用户和用户组 语法:chown [-R] [用户名]:[用户组名] 文件或目录 (-R 文件夹内所有文件都修改所有者)<br>exit和ctrl+d:退出当前用户<br>history:查看历史命令<br>!!:重复上一条命令<br>ctrl+r:搜索历史命令<br>ctrl+a:移动光标到行首<br>ctrl+e:移动光标到行尾<br>ctrl+鼠标左键:向左移动一个单词<br>ctrl+鼠标右键:向右移动一个单词<br>ctrl+l和clear:清屏<br>yum: RPM包管理器 语法:yum [-y] [install|remove|search] 软件名称 (-y 自动回答yes)<br>systemctl:管理系统服务 语法:systemctl [start|stop|restart|status|enable|disable] 服务名称<br>ln:创建软链接 语法:ln -s 源文件 链接文件 (-s 创建软链接)<br>hostnamectl:管理主机名 语法:hostnamectl [set-hostname] 主机名<br>ping:测试网络连通性 语法:ping [-c 包数] 目标地址<br>wget:下载文件 语法:wget 网址<br>curl:发起网络请求 语法:curl [-O] 网址 (-O 用于下载)<br>nmap:端口扫描 语法:nmap 目标地址<br>ps:查看进程信息 语法:ps -ef | grep 进程名<br>kill:杀死进程 语法:kill [-9] 进程号 (-9 强制杀死)<br>top:实时显示系统信息<br>free:查看内存使用情况<br>df:查看磁盘使用情况 语法:df [-h] (-h 显示单位)<br>iostat:查看磁盘IO情况 语法:iostat [-d -x -k -m] 设备名 (-d 显示磁盘IO, -x 显示详细信息, -k 以KB为单位, -m 以MB为单位)<br>tar:打包和压缩文件 语法:tar [-cvf -xvf -z -j -J] 打包或压缩后的文件名 (-c 打包, -v 显示过程, -f 指定文件名, -x 解压, -z 使用gzip压缩, -j 使用bzip2压缩, -J 使用xz压缩)<br>zip:压缩文件 语法:zip [-r] 压缩后的文件名 被压缩的文件或目录 (-r 递归压缩)<br>unzip:解压文件 语法:unzip 压缩文件名 (-d 指定解压目录)</p>
 
   </div>
   
@@ -2926,10 +2926,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-06T00:36:46+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-07T23:00:18+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Feb 6, 2025</p>
+    <p>更新于：Feb 7, 2025</p>
   </a>
 </div>
 
@@ -2955,7 +2955,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux指令 - Yunlin's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux基础 - Yunlin's Blog&summary="
           
           >
           
@@ -2967,7 +2967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux指令 - Yunlin's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux基础 - Yunlin's Blog&summary="
           
           >
           
@@ -2979,7 +2979,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux指令 - Yunlin's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/&title=Linux基础 - Yunlin's Blog&summary="
           
           >
           
@@ -3572,7 +3572,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://asd1238525.github.io/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/02/Linux指令/","name":"Linux指令"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"Linux指令","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/","wordCount":0,"datePublished":"2024-12-02T10:06:31.000Z","dateModified":"2025-02-05T16:36:46.000Z","articleSection":"Linux","keywords":"Linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","sameAs":["https://github.com/volantis-x"],"description":"分享技术知识，探讨编程问题，一起成长。"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://asd1238525.github.io/","name":"Yunlin's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://asd1238525.github.io/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://asd1238525.github.io/2024/12/02/Linux指令/","name":"Linux基础"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","keywords":null,"description":"分享技术知识，探讨编程问题，一起成长。","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/","description":"分享技术知识，探讨编程问题，一起成长。"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","url":"http://asd1238525.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://asd1238525.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"Linux基础","description":"分享技术知识，探讨编程问题，一起成长。","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://asd1238525.github.io/"},"publisher":{"@type":"Organization","name":"Yunlin's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://asd1238525.github.io/2024/12/02/Linux%E6%8C%87%E4%BB%A4/","wordCount":0,"datePublished":"2024-12-02T10:06:31.000Z","dateModified":"2025-02-07T15:00:18.000Z","articleSection":"Linux","keywords":"Linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
